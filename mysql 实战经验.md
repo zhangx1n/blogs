@@ -26,10 +26,90 @@
 - 不要使用连表操作，join逻辑在业务代码里完成
 - 不用MYSQL 内置的函数，因为内置函数不会建立查询缓存，复杂的计算逻辑放到自己的代码里去做
 # sql 注入
-- `sql ="'select username,password from user where username=" + username +" and password=" + password + `
-变量username和password从前端输入框获取，如果用户输入的
-username为lily，password为aaa' or '1'='1
-则完整的sql为select username,password from user where
-username="ily' and password='aaa'or '1'='1'
-会返回表里的所有记录，如果记录数大于0就允许登录，则lily的
-账号被盗
+- `sql ="'select username,password from user where username=" + username +" and password=" + password + "'";`
+	变量username和password从前端输入框获取，如果用户输入的 username为lily，password为aaa' or '1'='1
+	则完整的sql为`select username,password from user where username="ily' and password='aaa'or '1'='1'`
+	会返回表里的所有记录，如果记录数大于0就允许登录，则lily的账号被盗
+- `sql="insert into student （name） values （'"+username+" ）"；`
+	变量username从前端输入框获取，如果用户输入的username为 `lily'）；arop table student；--`
+	完整sql为`insert into student （name） values （lily'）； drop table student；--"）`
+	通过注释符--屏蔽掉了末尾的'，删除了整个表
+---
+- **前端输入要加正则校验、长度限制**
+- **对特殊符号（<>&\*；"等）进行转义或编码转换，Go的text/template 包里面的HTMLEscapeString函数可以对字符串进行转义处理**
+- **不要将用户输入直接嵌入到sq|语句中，而应该使用参数化查询接口，如Prepare、Query、Exec（query string, args..interfacef）**
+- **使用专业的SQL注入检测工具进行检测，如sqlmap、SQLninja**
+- **避免网站打印出SQL错误信息，以防止攻击者利用这些错误信息进行 SQL注入**
+- **没有任何一种方式能防住所有的sql注入，以上方法要结合使用**
+```go
+import (  
+    "gorm.io/gorm"  
+)  
+  
+// 登录成功返回true。容易被SQL注入攻击  
+func LoginUnsafe(db *gorm.DB, name, passwd string) bool {  
+    var cnt int64  
+    db.Table("login").Select("*").Where("username='" + name + "' and password='" + passwd + "'").Count(&cnt)  
+    return cnt > 0  
+}  
+  
+// 登录成功返回true。拒绝SQL注入攻击  
+func LoginSafe(db *gorm.DB, name, passwd string) bool {  
+    var cnt int64  
+    db.Table("login").Select("*").Where("username=? and password=?", name, passwd).Count(&cnt)  
+    return cnt > 0  
+}
+```
+
+## stmt
+
+> MySQL从4.1版本开始提供了一种名为预处理语句（prepared statement）的机制。它可以将整个命令向MySQL服务器发送一次，以后只有参数发生变化，MySQL服务器只需对命令的结构做一次分析就够了。这不仅大大减少了需要传输的数据量，还提高了命令的处理效率。可以用mysqli扩展模式中提供的mysqli_stmt类的对象，去定义和执行参数化的SQL命令。
+> 也可以用来防止 sql 注入
+
+- 定义一个sql模板 `stmt, err ：= db.Prepare（"update student set score=score+？where city=？"）`
+- 多次使用模板
+	res, err：=stmt.Exec（10， "上海"）
+	res, err=stmt.Exec（9，"深圳”）
+- 不要拼接sql（容易被SQL注入攻击，且利用不上编译优化）
+	`db.Where（fmt.Sprintf（"merchant_id = %s"， "， merchantld））`
+### sql 预编译
+
+DB执行sql分为3步：
+1. 词法和语义解析
+2. 优化 SQL语句，制定执行计划
+3. 执行并返回结果
+SQL预编译技术是指将用户输入用占位符？代替，先对这个模板化的sql进行预编译，实际运行时再将用户输入代入
+除了可以防止 SQL注入，还可以对预编译的SQL语句进行缓存，之后的运行就省去了解析优化SQL语句的过程
+
+# 分页查询优化
+
+ **最大id查询法**
+
+  举个例子，我查询第一页的时候是limit 0,10 查询到的最后一条id是10，那么下一页的查询只需要查询id大于10的10条数据即可。
+```sql
+  select * from user where id >10 limit 0, 10
+```
+
+- **between...and**
+
+  ```sql
+  select * from user where id BETWEEN 4000000 and 4000010
+  ```
+
+  ![img](https://img-blog.csdnimg.cn/20200322113011199.png)
+  ![img](https://img-blog.csdnimg.cn/20200322112836413.png)
+
+  这种方式也只能适用于自增主键，并且id没有断裂，否者不推荐这种方式，我们发现使用BETWEEN AND的时候查询出来11条记录，也就是说BETWEEN AND包含了两边的边间条件。使用的时候需要特别注意一下。
+
+- **索引覆盖**
+
+  可以利用表的 覆盖索引 来加速分页查询，利用了索引查询的语句中如果只包含了那个索引列（覆盖索引），那么这种情况会查询很快。因为利用索引查找有优化算法，且数据块就在查询索引上面，不用再去找相关的数据块，这样节省了很多时间，也就是说，查询的数据就在索引上，不用再经过 回表 的操作。例如：
+
+  ```sql
+  select id from tb_a where number=1 limit 100000, 100;
+
+  -- 改成
+  select * from tb_a where number = 1 and id >= (select id from tb_a where number = 1 limit 100000, 1) limit 100;
+  ```
+
+  id 是主键索引（聚簇索引），number 是二级索引（非聚簇索引），二级索引的叶子结点上存储的是主键索引值，而我们只需要查询主键即可，因此就不用 回表 查询多一次。
