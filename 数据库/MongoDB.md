@@ -1569,3 +1569,4 @@ fmt.Printf("Deleted %v documents in the trainers collection\n", deleteResult2.De
 ```
 
 更多方法请查阅[官方文档](https://godoc.org/go.mongodb.org/mongo-driver)。
+
