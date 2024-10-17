@@ -1,6 +1,6 @@
 ## 编译链接过程
 
-![img](https://img-blog.csdnimg.cn/img_convert/8aae6ce1a4724605c6176c02d385ce0d.png)
+![编译链接过程](https://img-blog.csdnimg.cn/img_convert/8aae6ce1a4724605c6176c02d385ce0d.png)
 
 ⭐在编译过程中，源文件经过预编译、编译和汇编的过程，生成了二进制的可重定位的目标文件；
 
