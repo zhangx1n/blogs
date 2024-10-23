@@ -6,7 +6,7 @@ navbar: true
 sidebar: true
 footer: true
 date: 2024-01-29
-category: Article
+category: Document
 author: Zhang Xin
 next: true
 tags:
