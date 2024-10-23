@@ -1,7 +1,7 @@
 ---
 title: c++11 新特性
 time: 14:37
-description: c++ 11 新特性
+description: c++11 新特性
 navbar: true
 sidebar: true
 footer: true
