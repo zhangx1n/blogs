@@ -1,1 +1,8 @@
-这是我的个人博客, 正在完善...
+---
+layout: home
+---
+
+<CustomBlogHeader />
+<VPBHome />
+<BabyPulm />
+<!-- <BabyPulm2 /> -->
