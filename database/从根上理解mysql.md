@@ -1,3 +1,18 @@
+---
+title: 从根上理解mysql
+time: 14:37
+description: 介绍了 mysql 相关基础知识
+navbar: true
+sidebar: true
+footer: true
+date: 2024-09-29
+category: Article
+author: Zhang Xin
+next: true
+tags:
+  - Mysql
+---
+
 # 从根上理解mysql
 
 

@@ -1,3 +1,17 @@
+---
+title: c++内存管理
+time: 14:37
+description: c++内存管理
+navbar: true
+sidebar: true
+footer: true
+date: 2023-01-29
+category: Document
+author: Zhang Xin
+next: true
+tags:
+  - cpp
+---
 # Primitives 基础组件
 
 * 使用内存的途径

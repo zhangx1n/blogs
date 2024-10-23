@@ -1,3 +1,17 @@
+---
+title: 从根上理解Redis
+time: 14:37
+description: 介绍了 redis 相关基础知识
+navbar: true
+sidebar: true
+footer: true
+date: 2024-09-29
+category: Article
+author: Zhang Xin
+next: true
+tags:
+  - Redis
+---
 # 基础
 
 ## 数据结构

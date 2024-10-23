@@ -1,3 +1,17 @@
+---
+title: 从编译器角度理解 c++的编译和链接过程
+time: 14:37
+description: 从编译器角度理解 c++ 的编译和链接过程
+navbar: true
+sidebar: true
+footer: true
+date: 2024-01-29
+category: Article
+author: Zhang Xin
+next: true
+tags:
+  - cpp
+---
 ## 编译链接过程
 
 ![编译链接过程](https://img-blog.csdnimg.cn/img_convert/8aae6ce1a4724605c6176c02d385ce0d.png)

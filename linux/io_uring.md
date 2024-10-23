@@ -1,3 +1,18 @@
+---
+title: io_uring 使用
+time: 14:37
+description: io_uring 基础
+navbar: true
+sidebar: true
+footer: true
+date: 2024-01-29
+category: Article
+author: Zhang Xin
+next: true
+tags:
+  - Linux
+  - io_uring
+---
 # io_uring: 高性能异步框架
 
 https://zhuanlan.zhihu.com/p/608787533

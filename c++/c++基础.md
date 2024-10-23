@@ -1,4 +1,17 @@
-
+---
+title: c++基础
+time: 14:37
+description: c++基础
+navbar: true
+sidebar: true
+footer: true
+date: 2023-01-29
+category: Tutorial
+author: Zhang Xin
+next: true
+tags:
+  - cpp
+---
 ## 基础语法
 
 ### inline内联函数

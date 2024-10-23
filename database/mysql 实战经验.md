@@ -1,3 +1,17 @@
+---
+title: mysql 实战经验
+time: 14:37
+description: mysql 实战经验
+navbar: true
+sidebar: true
+footer: true
+date: 2024-09-29
+category: Article
+author: Zhang Xin
+next: true
+tags:
+  - Mysql
+---
 # 经验
 - 写sql时一律使用小写
 - 建表时先判断表是否已存在 if not exists

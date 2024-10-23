@@ -1,3 +1,17 @@
+---
+title: MongoDB
+time: 14:37
+description: MongoDB 基础
+navbar: true
+sidebar: true
+footer: true
+date: 2024-07-29
+category: Document
+author: Zhang Xin
+next: true
+tags:
+  - MongoDB
+---
 # 基本概念
 ## 无模式数据库
 

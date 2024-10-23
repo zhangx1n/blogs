@@ -1,3 +1,17 @@
+---
+title: Kafka
+time: 14:37
+description: Kafka 基础
+navbar: true
+sidebar: true
+footer: true
+date: 2024-01-29
+category: Article
+author: Zhang Xin
+next: true
+tags:
+  - Kafka
+---
 > 万字长文解析kafka：https://mp.weixin.qq.com/s/dOiNT0a_dRytwatzdrJNCg
 >
 > kafka日志存储：https://zhuanlan.zhihu.com/p/65415304

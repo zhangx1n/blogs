@@ -1,3 +1,17 @@
+---
+title: STL
+time: 14:37
+description: STL
+navbar: true
+sidebar: true
+footer: true
+date: 2024-01-29
+category: Tutorial
+author: Zhang Xin
+next: true
+tags:
+  - cpp
+---
 ## STL六大部件
 
 ![](https://mdimagehosting.oss-cn-shanghai.aliyuncs.com/img/202303121335075.png)
