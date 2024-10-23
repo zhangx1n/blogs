@@ -1,3 +1,17 @@
+---
+title: TorchMetrics 使用
+time: 14:37
+description: python collections 模块
+navbar: true
+sidebar: true
+footer: true
+date: 2024-01-29
+category: Document
+author: Zhang Xin
+next: true
+tags:
+  - python
+---
 [TorchMetrics：PyTorch的指标度量库_ronghuaiyang的博客-CSDN博客](https://blog.csdn.net/u011984148/article/details/115541306)
 
 虽然TorchMetrics被构建为与原生的PyTorch一起使用，但TorchMetrics与Lightning一起使用提供了额外的好处：

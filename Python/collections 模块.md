@@ -1,3 +1,17 @@
+---
+title: python collections 模块
+time: 14:37
+description: python collections 模块
+navbar: true
+sidebar: true
+footer: true
+date: 2024-01-29
+category: Document
+author: Zhang Xin
+next: true
+tags:
+  - python
+---
 ## Counter
 
 Counter是一个dict子类，主要是用来对你访问的对象的频率进行计数。

@@ -1,3 +1,17 @@
+---
+title: python csv 文件处理
+time: 14:37
+description: python csv 文件处理
+navbar: true
+sidebar: true
+footer: true
+date: 2024-01-29
+category: Article
+author: Zhang Xin
+next: true
+tags:
+  - python
+---
 csv文件（`Comma-Separated Values`）是一种以逗号作为分隔符（当然也可以以其他字符作为分隔符）、以行为数据单位的纯文本数据文件，比如像下面这样的一个文件`data.csv`：
 
 

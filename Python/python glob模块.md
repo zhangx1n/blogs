@@ -1,3 +1,17 @@
+---
+title: python glob 模块
+time: 14:37
+description: python glob 模块
+navbar: true
+sidebar: true
+footer: true
+date: 2024-03-29
+category: Document
+author: Zhang Xin
+next: true
+tags:
+  - python
+---
 ## glob 模块 （查找文件路径）
 
 ### 通配符：

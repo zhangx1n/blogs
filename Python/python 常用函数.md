@@ -1,3 +1,17 @@
+---
+title: python 常用函数
+time: 14:37
+description: python 常用函数
+navbar: true
+sidebar: true
+footer: true
+date: 2024-04-29
+category: Article
+author: Zhang Xin
+next: true
+tags:
+  - python
+---
 ## Lambda
 
 ```python

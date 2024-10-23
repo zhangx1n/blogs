@@ -1,3 +1,17 @@
+---
+title: python tqdm 模块
+time: 14:37
+description: python tqdm 模块
+navbar: true
+sidebar: true
+footer: true
+date: 2024-01-29
+category: Document
+author: Zhang Xin
+next: true
+tags:
+  - python
+---
 ### tqdm模块是python进度条库, 主要分为两种运行模式
 
 1. 基于迭代对象运行: tqdm(iterator)

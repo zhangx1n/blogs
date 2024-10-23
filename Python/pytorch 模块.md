@@ -1,4 +1,17 @@
-
+---
+title: pytorch 使用
+time: 14:37
+description: python pytorch 模块
+navbar: true
+sidebar: true
+footer: true
+date: 2023-03-29
+category: Document
+author: Zhang Xin
+next: true
+tags:
+  - python
+---
 
 ### torch.optim.lr_scheduler：调整学习率
 

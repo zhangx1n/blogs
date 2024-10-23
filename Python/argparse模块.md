@@ -1,3 +1,17 @@
+---
+title: python argparse 模块
+time: 14:37
+description: python argparse 模块
+navbar: true
+sidebar: true
+footer: true
+date: 2024-01-29
+category: Article
+author: Zhang Xin
+next: true
+tags:
+  - python
+---
 ## 一、简介
 
 `argparse`是python用于解析命令行参数和选项的标准模块，用于代替已经过时的optparse模块。`argparse`模块的作用是用于解析命令行参数。
