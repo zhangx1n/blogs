@@ -16,6 +16,7 @@ tags:
 ```c++
 cout<< __cplusplus << endl;
 ```
+---
 
 # Variadic Templates（可变参数模板）
 

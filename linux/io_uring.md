@@ -23,7 +23,7 @@ Io_uring 利用 mmap 开辟出一块空间，让用户态和内核态的程序�
 
 - **提交队列**：submission queue (SQ)
 - **完成队列**：completion queue (CQ)
-
+---
 <img src="https://mdimagehosting.oss-cn-shanghai.aliyuncs.com/img/image-20230601150201557.png" alt="image-20230601150201557" style="zoom: 50%;" />
 
 这两个队列：

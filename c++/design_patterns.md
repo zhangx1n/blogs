@@ -24,6 +24,7 @@ tags:
 
 饿汉式一定是线程安全的；但是会延长软件的启动时间
 
+---
 ```cpp
 #include <iostream>
 

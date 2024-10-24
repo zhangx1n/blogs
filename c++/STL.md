@@ -14,6 +14,14 @@ tags:
 ---
 ## STL六大部件
 
+- 容器
+- 分配器
+- 算法
+- 迭代器
+- 适配器
+- Functor
+
+---
 ![](https://mdimagehosting.oss-cn-shanghai.aliyuncs.com/img/202303121335075.png)
 
 在STL容器中都是使用***前闭后开***区间

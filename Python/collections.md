@@ -21,7 +21,7 @@ Counter是一个dict子类，主要是用来对你访问的对象的频率进行
 - most_common([n])：返回一个列表，提供n个访问频率最高的元素和计数
 - subtract([iterable-or-mapping])：从迭代对象中减去元素，输入输出可以是0或者负数
 - update([iterable-or-mapping])：从迭代对象计数元素或者从另一个 映射对象 (或计数器) 添加。
-
+---
 ```python
 # 统计字符出现的次数
 >>> import collections

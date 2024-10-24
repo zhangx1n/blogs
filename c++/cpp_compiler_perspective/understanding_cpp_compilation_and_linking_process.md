@@ -12,6 +12,13 @@ next: true
 tags:
   - cpp
 ---
+# 引言
+
+1. 预编译->编译->汇编->二进制可重定位目标文件
+
+2. 链接
+---
+
 ## 编译链接过程
 
 ![编译链接过程](https://img-blog.csdnimg.cn/img_convert/8aae6ce1a4724605c6176c02d385ce0d.png)
