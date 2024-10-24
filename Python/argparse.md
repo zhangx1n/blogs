@@ -17,7 +17,7 @@ tags:
 `argparse`是python用于解析命令行参数和选项的标准模块，用于代替已经过时的optparse模块。`argparse`模块的作用是用于解析命令行参数。
 
 ---
-# 使用步骤
+## 使用步骤
 
 
 
@@ -38,7 +38,7 @@ tags:
  最后调用parse_args()方法进行解析；
  解析成功之后即可使用。
 
-## 三、创建解析器对象ArgumentParser
+## 创建解析器对象ArgumentParser
 
 
 
@@ -141,7 +141,7 @@ optional arguments:
   --foo FOO   new foo help
 ```
 
-## 四、add_argument()方法，用来指定程序需要接受的命令参数
+## add_argument()方法，用来指定程序需要接受的命令参数
 
 
 
@@ -283,7 +283,7 @@ parser.add_argument("-v", "--verbosity", type=int, choices=[0, 1, 2], help="incr
  **desk**：可作为参数名
  **help**：参数命令的介绍
 
-## 五、参数有几种写法：
+## 参数有几种写法：
 
 最常见的空格分开：
 

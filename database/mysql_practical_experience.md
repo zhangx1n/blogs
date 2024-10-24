@@ -12,7 +12,7 @@ next: true
 tags:
   - Mysql
 ---
-# 引言
+
 - 写sql时一律使用小写
 - 建表时先判断表是否已存在 if not exists
 - 所有的列和表都加comment

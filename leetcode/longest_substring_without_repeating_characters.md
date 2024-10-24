@@ -12,7 +12,7 @@ next: true
 tags:
   - leetcode
 ---
-# 题目  
+## 题目  
 
 给定一个字符串 `s` ，请你找出其中不含有重复字符的 **最长子串** 的长度。
 
@@ -42,7 +42,7 @@ Explanation: The answer is "wke", with the length of 3.
 ```  
   
   
-# 解题思路  
+## 解题思路  
   
 这一题和第 438 题，第 3 题，第 76 题，第 567 题类似，用的思想都是"滑动窗口"。  
   

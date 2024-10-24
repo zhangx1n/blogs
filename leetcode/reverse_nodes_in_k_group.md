@@ -12,7 +12,7 @@ next: true
 tags:
   - leetcode
 ---
-# 题目  
+## 题目  
   
 给你链表的头节点 `head` ，每 `k` 个节点一组进行翻转，请你返回修改后的链表。
 
@@ -32,7 +32,7 @@ For k = 3, you should return: 3->2->1->4->5
 ```  
   
   
-# 解题思路  
+## 解题思路  
   
 这一题是 problem 24 的加强版，problem 24 是两两相邻的元素，翻转链表。而 problem 25 要求的是 k 个相邻的元素，翻转链表，problem 相当于是 k = 2 的特殊情况。
 
